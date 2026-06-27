@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs><linearGradient id="m" x1="0" x2="1"><stop stop-color="#16191d"/><stop offset="1" stop-color="#515860"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="#0a0b0d"/>
+  <circle cx="920" cy="140" r="260" fill="#f08a3c" opacity=".18"/>
+  <g transform="translate(180 320)" fill="url(#m)" stroke="#e8e2d4" stroke-opacity=".22" stroke-width="4">
+    <polygon points="0,120 130,5 355,-40 630,-5 820,90 730,165 410,150 185,210"/>
+    <polygon points="630,-5 760,-115 930,-78 1010,35 820,90"/>
+    <polygon points="760,-115 800,-200 855,-88"/><polygon points="900,-82 975,-165 954,-45"/>
+    <polygon points="190,210 250,375 315,375 295,205"/><polygon points="620,160 690,365 755,365 720,142"/>
+    <polygon points="60,110 -120,55 -150,105 10,150"/>
+  </g>
+  <text x="80" y="725" font-family="Arial, Helvetica, sans-serif" font-size="46" fill="#f2efe7" letter-spacing="6">PANTHER SERIES</text>
+</svg>
