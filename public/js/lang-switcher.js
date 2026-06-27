@@ -260,6 +260,62 @@
     }
   };
 
+
+
+  Object.assign(translations.tr, {
+    'Request Quote': 'Teklif Al',
+    'Request a quote': 'Teklif al',
+    'Contact Ironform Studio.': 'Ironform Studio ile iletişime geçin.',
+    'Reach us directly for general questions, partnerships and studio communication.': 'Genel sorular, iş birlikleri ve stüdyo iletişimi için bize doğrudan ulaşın.',
+    'Email Us': 'Bize E-posta Gönder',
+    'If you want pricing, a custom sculpture or a project quotation, please use the Request Quote page. For all other topics, you can contact us directly by email.': 'Fiyat, özel heykel veya proje teklifi istiyorsan Teklif Al sayfasını kullan. Diğer tüm konular için bize doğrudan e-postayla ulaşabilirsin.',
+    'Quote requests': 'Teklif talepleri',
+    'Use the Request Quote page for product and project inquiries.': 'Ürün ve proje talepleri için Teklif Al sayfasını kullan.',
+    'Quick Contact': 'Hızlı İletişim',
+    'For direct communication, email us and briefly tell us what you need.': 'Doğrudan iletişim için bize e-posta gönder ve neye ihtiyacın olduğunu kısaca anlat.',
+    'Go to Request Quote': 'Teklif Al sayfasına git',
+    'Request a quote for your custom piece.': 'Özel parçan için teklif iste.',
+    'Tell us about the sculpture, size, finish and space you have in mind.': 'Aklındaki heykeli, ölçüyü, yüzeyi ve kullanılacağı mekanı bize anlat.',
+    'Use this page for custom sculpture requests, pricing questions, catalog piece interest and early project conversations.': 'Bu sayfayı özel heykel talepleri, fiyat soruları, katalog ürün ilgisi ve erken proje görüşmeleri için kullan.',
+    'Custom piece': 'Özel parça',
+    'We create low-poly metal sculptures that feel both engineered and artistic. The work is designed to sit comfortably in residential interiors, outdoor landscapes, hotel lobbies, office entries and branded environments where a memorable focal point matters.': 'Hem mühendislik hissi veren hem de sanatsal duran low-poly metal heykeller üretiyoruz. Çalışmalar; konut iç mekanları, dış alanlar, otel lobileri, ofis girişleri ve unutulmaz bir odak noktasının önemli olduğu marka alanları için tasarlanır.',
+    'Low-poly planes give every sculpture a clean silhouette and strong modern identity.': 'Low-poly yüzeyler her heykele temiz bir silüet ve güçlü modern bir kimlik kazandırır.',
+    'Steel construction and durable finishes make the work suitable for long-term display.': 'Çelik yapı ve dayanıklı yüzeyler işi uzun süreli sergileme için uygun hale getirir.',
+    'Pieces are created for places where art must be seen, remembered and photographed.': 'Parçalar; sanatın görülmesi, hatırlanması ve fotoğraflanması gereken mekanlar için üretilir.',
+    'The process begins with choosing or developing the model. The form is modeled and translated into buildable drawings. Once the drawing stage is complete, steel parts are laser-cut, shaped into the correct angles, welded, refined and finished for indoor or outdoor use.': 'Süreç modelin seçilmesi veya geliştirilmesiyle başlar. Form modellenir ve üretilebilir çizimlere dönüştürülür. Çizim aşaması tamamlandıktan sonra çelik parçalar lazerle kesilir, doğru açılara getirilir, kaynaklanır, düzeltilir ve iç/dış mekan kullanımına uygun şekilde tamamlanır.',
+    'Eagle, panther, wolf, horse, stag, lion or a custom symbol.': 'Kartal, panter, kurt, at, geyik, aslan veya özel bir sembol.',
+    'Wall, freestanding, garden, lobby or brand installation.': 'Duvar, ayaklı form, bahçe, lobi veya marka yerleşimi.',
+    'Matte black, raw steel look, powder coating and outdoor coatings.': 'Mat siyah, ham çelik görünümü, toz boya ve dış mekan kaplamaları.',
+    'Send Inquiry': 'Talep Gönder'
+  });
+
+  Object.assign(translations.es, {
+    'Request Quote': 'Solicitar Cotización',
+    'Request a quote': 'Solicitar cotización',
+    'Contact Ironform Studio.': 'Contacta con Ironform Studio.',
+    'Reach us directly for general questions, partnerships and studio communication.': 'Contáctanos directamente para preguntas generales, colaboraciones y comunicación del estudio.',
+    'Email Us': 'Envíanos un Email',
+    'If you want pricing, a custom sculpture or a project quotation, please use the Request Quote page. For all other topics, you can contact us directly by email.': 'Si quieres precios, una escultura personalizada o una cotización de proyecto, utiliza la página Solicitar Cotización. Para cualquier otro tema, puedes contactarnos directamente por email.',
+    'Quote requests': 'Solicitudes de cotización',
+    'Use the Request Quote page for product and project inquiries.': 'Usa la página Solicitar Cotización para consultas de productos y proyectos.',
+    'Quick Contact': 'Contacto Rápido',
+    'For direct communication, email us and briefly tell us what you need.': 'Para comunicación directa, envíanos un email y cuéntanos brevemente lo que necesitas.',
+    'Go to Request Quote': 'Ir a Solicitar Cotización',
+    'Request a quote for your custom piece.': 'Solicita una cotización para tu pieza personalizada.',
+    'Tell us about the sculpture, size, finish and space you have in mind.': 'Cuéntanos sobre la escultura, el tamaño, el acabado y el espacio que tienes en mente.',
+    'Use this page for custom sculpture requests, pricing questions, catalog piece interest and early project conversations.': 'Usa esta página para solicitudes de esculturas personalizadas, preguntas de precios, interés por piezas del catálogo y conversaciones iniciales de proyectos.',
+    'Custom piece': 'Pieza personalizada',
+    'We create low-poly metal sculptures that feel both engineered and artistic. The work is designed to sit comfortably in residential interiors, outdoor landscapes, hotel lobbies, office entries and branded environments where a memorable focal point matters.': 'Creamos esculturas metálicas low-poly con una sensación tanto técnica como artística. El trabajo está diseñado para integrarse en interiores residenciales, paisajes exteriores, lobbies de hoteles, entradas de oficinas y espacios de marca donde importa un punto focal memorable.',
+    'Low-poly planes give every sculpture a clean silhouette and strong modern identity.': 'Los planos low-poly aportan a cada escultura una silueta limpia y una identidad moderna fuerte.',
+    'Steel construction and durable finishes make the work suitable for long-term display.': 'La construcción en acero y los acabados duraderos hacen que la obra sea adecuada para una exhibición a largo plazo.',
+    'Pieces are created for places where art must be seen, remembered and photographed.': 'Las piezas se crean para lugares donde el arte debe verse, recordarse y fotografiarse.',
+    'The process begins with choosing or developing the model. The form is modeled and translated into buildable drawings. Once the drawing stage is complete, steel parts are laser-cut, shaped into the correct angles, welded, refined and finished for indoor or outdoor use.': 'El proceso comienza con la elección o el desarrollo del modelo. La forma se modela y se traduce en planos construibles. Una vez terminada la fase de dibujo, las piezas de acero se cortan con láser, se conforman en los ángulos correctos, se sueldan, se refinan y se terminan para uso interior o exterior.',
+    'Eagle, panther, wolf, horse, stag, lion or a custom symbol.': 'Águila, pantera, lobo, caballo, ciervo, león o un símbolo personalizado.',
+    'Wall, freestanding, garden, lobby or brand installation.': 'Mural, exenta, jardín, lobby o instalación de marca.',
+    'Matte black, raw steel look, powder coating and outdoor coatings.': 'Negro mate, aspecto de acero crudo, pintura en polvo y recubrimientos para exterior.',
+    'Send Inquiry': 'Enviar Consulta'
+  });
+
   function getLang() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (supported.includes(saved)) return saved;

@@ -22,6 +22,14 @@ function msg(text,type='notice'){
   setTimeout(()=>{ if(box) box.innerHTML=''; },5000);
 }
 
+function friendlyError(error, fallback='Bir bağlantı hatası oluştu.'){
+  const message = error?.message || '';
+  if (/Failed to fetch/i.test(message)) return 'Supabase bağlantısı kurulamadı. İnternet bağlantısını, js/config.js ayarlarını ve Supabase projesini kontrol et.';
+  if (/is_admin/i.test(message)) return 'Supabase SQL kurulumu eksik görünüyor. README-KURULUM.md içindeki SQL adımlarını tekrar uygula.';
+  if (/Invalid API key|JWT|permission|not admin/i.test(message)) return 'Admin yetkisi veya Supabase anahtarı ile ilgili bir sorun var. Kurulumu kontrol et.';
+  return message || fallback;
+}
+
 function authScreen(reason=''){
   $('#adminRoot').innerHTML = `<div class="auth-card">
     <img src="assets/logo.webp" alt="Ironform Studio logo">
@@ -40,50 +48,74 @@ function authScreen(reason=''){
 }
 
 async function login(fd){
-  const {data,error}=await supabase.auth.signInWithPassword({email:fd.get('email'),password:fd.get('password')});
-  if(error){ authScreen(error.message); return; }
-  session=data.session; await loadAll(); renderShell(); renderView('dashboard');
+  try{
+    const {data,error}=await supabase.auth.signInWithPassword({email:fd.get('email'),password:fd.get('password')});
+    if(error){ authScreen(error.message); return; }
+    session=data.session; await loadAll(); renderShell(); renderView('dashboard');
+  }catch(error){ authScreen(friendlyError(error)); }
 }
 async function signup(fd){
-  const {error}=await supabase.auth.signUp({email:fd.get('email'),password:fd.get('password')});
-  if(error){ authScreen(error.message); return; }
-  authScreen('Hesap oluşturuldu. Supabase e-posta onayı açıksa mailini onayla, sonra giriş yap.');
+  try{
+    const {error}=await supabase.auth.signUp({email:fd.get('email'),password:fd.get('password')});
+    if(error){ authScreen(error.message); return; }
+    authScreen('Hesap oluşturuldu. Supabase e-posta onayı açıksa mailini onayla, sonra giriş yap.');
+  }catch(error){ authScreen(friendlyError(error)); }
 }
 async function signout(){ await supabase.auth.signOut(); session=null; authScreen(); }
 
 async function isAdmin(){
-  const {data,error}=await supabase.rpc('is_admin');
-  return !error && data === true;
+  try{
+    const {data,error}=await supabase.rpc('is_admin');
+    if(error) throw error;
+    return data === true;
+  }catch(error){
+    throw new Error(error?.message || 'is_admin kontrolü başarısız oldu.');
+  }
 }
 
 async function loadAll(){
   const ok = await isAdmin();
-  if(!ok){ authScreen('Bu e-posta admin listesinde değil. İlk admin mailini Supabase SQL içinde admin_users tablosuna ekle veya başka adminin seni eklemesini iste.'); throw new Error('not admin'); }
+  if(!ok){
+    authScreen('Bu e-posta admin listesinde değil. İlk admin mailini Supabase SQL içinde admin_users tablosuna ekle veya başka adminin seni eklemesini iste.');
+    throw new Error('not admin');
+  }
   await Promise.all([loadSettings(),loadProducts(),loadProjects(),loadSections(),loadAdmins(),loadInquiries()]);
 }
 async function loadSettings(){
-  const {data}=await supabase.from('site_settings').select('*').eq('id','main').maybeSingle();
-  settings = data || fallbackSettings;
+  try{
+    const {data}=await supabase.from('site_settings').select('*').eq('id','main').maybeSingle();
+    settings = data || fallbackSettings;
+  }catch(_e){ settings = fallbackSettings; }
 }
 async function loadProducts(){
-  const {data,error}=await supabase.from('products').select('*').order('sort_order',{ascending:true});
-  products = error || !data ? fallbackProducts : data;
+  try{
+    const {data,error}=await supabase.from('products').select('*').order('sort_order',{ascending:true});
+    products = error || !data ? fallbackProducts : data;
+  }catch(_e){ products = fallbackProducts; }
 }
 async function loadProjects(){
-  const {data,error}=await supabase.from('projects').select('*').order('sort_order',{ascending:true});
-  projects = error || !data ? fallbackProjects : data;
+  try{
+    const {data,error}=await supabase.from('projects').select('*').order('sort_order',{ascending:true});
+    projects = error || !data ? fallbackProjects : data;
+  }catch(_e){ projects = fallbackProjects; }
 }
 async function loadSections(){
-  const {data,error}=await supabase.from('page_sections').select('*').order('page').order('sort_order',{ascending:true});
-  sections = error || !data ? fallbackSections : data;
+  try{
+    const {data,error}=await supabase.from('page_sections').select('*').order('page').order('sort_order',{ascending:true});
+    sections = error || !data ? fallbackSections : data;
+  }catch(_e){ sections = fallbackSections; }
 }
 async function loadAdmins(){
-  const {data,error}=await supabase.from('admin_users').select('*').order('created_at',{ascending:false});
-  admins = error || !data ? [] : data;
+  try{
+    const {data,error}=await supabase.from('admin_users').select('*').order('created_at',{ascending:false});
+    admins = error || !data ? [] : data;
+  }catch(_e){ admins = []; }
 }
 async function loadInquiries(){
-  const {data,error}=await supabase.from('order_inquiries').select('*').order('created_at',{ascending:false}).limit(200);
-  inquiries = error || !data ? [] : data;
+  try{
+    const {data,error}=await supabase.from('order_inquiries').select('*').order('created_at',{ascending:false}).limit(200);
+    inquiries = error || !data ? [] : data;
+  }catch(_e){ inquiries = []; }
 }
 
 function renderShell(){
@@ -308,14 +340,21 @@ async function deleteAdmin(email){
 }
 
 async function init(){
-  supabase=await getSupabase({ timeoutMs: 8000, silent: false });
-  if(!supabase){
-    $('#adminRoot').innerHTML=`<div class="auth-card"><img src="assets/logo.webp" alt="Logo"><h1>Supabase bağlantısı kurulamadı</h1><p><b>js/config.js</b> içindeki Supabase bilgilerini ve internet bağlantısını kontrol etmelisin.</p><div class="notice">Kurulum için ZIP içindeki <b>README-KURULUM.md</b> dosyasını aç.</div></div>`;
-    return;
+  try{
+    supabase=await getSupabase({ timeoutMs: 8000, silent: false });
+    if(!supabase){
+      $('#adminRoot').innerHTML=`<div class="auth-card"><img src="assets/logo.webp" alt="Logo"><h1>Supabase bağlantısı kurulamadı</h1><p><b>js/config.js</b> içindeki Supabase bilgilerini ve internet bağlantısını kontrol etmelisin.</p><div class="notice">Kurulum için ZIP içindeki <b>README-KURULUM.md</b> dosyasını aç.</div></div>`;
+      return;
+    }
+    const res=await supabase.auth.getSession();
+    session=res?.data?.session || null;
+    if(!session){ authScreen(); return; }
+    await loadAll();
+    renderShell();
+    renderView('dashboard');
+  }catch(error){
+    $('#adminRoot').innerHTML=`<div class="auth-card"><img src="assets/logo.webp" alt="Logo"><h1>Admin paneli açılamadı</h1><p>${esc(friendlyError(error))}</p><div class="notice">Kurulum için ZIP içindeki <b>README-KURULUM.md</b> dosyasını aç.</div></div>`;
   }
-  const res=await supabase.auth.getSession(); session=res.data.session;
-  if(!session){ authScreen(); return; }
-  try{ await loadAll(); renderShell(); renderView('dashboard'); }catch(e){ console.warn(e); }
 }
 
 init();
