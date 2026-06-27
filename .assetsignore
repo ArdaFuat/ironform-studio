@@ -1,3 +1,13 @@
-sql/
+.git
+.git/**
+.wrangler
+.wrangler/**
+node_modules
+node_modules/**
+.env
+.env.*
+*.log
+.DS_Store
 README-KURULUM.md
-*.sql
+sql
+sql/**
