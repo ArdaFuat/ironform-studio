@@ -13,7 +13,7 @@ create table if not exists public.admin_users (
 create table if not exists public.site_settings (
   id text primary key default 'main',
   brand_name text default 'IRONFORM STUDIO',
-  logo_url text default 'assets/logo.png',
+  logo_url text default 'assets/logo.webp',
   email text default 'hello@ironformstudio.com',
   phone text default '',
   instagram text default '',
@@ -181,7 +181,7 @@ create policy "admins delete site assets" on storage.objects for delete using (b
 
 -- Starter data.
 insert into public.site_settings (id, brand_name, logo_url, email, instagram, address)
-values ('main','IRONFORM STUDIO','assets/logo.png','hello@ironformstudio.com','https://instagram.com/','United States')
+values ('main','IRONFORM STUDIO','assets/logo.webp','hello@ironformstudio.com','https://instagram.com/','United States')
 on conflict (id) do update set brand_name=excluded.brand_name;
 
 insert into public.page_sections (page, section_key, sort_order, kind, visible, images, content) values

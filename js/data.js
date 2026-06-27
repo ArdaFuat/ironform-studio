@@ -1,9 +1,15 @@
 import { getSupabase } from './supabaseClient.js';
 
+const DATA_TIMEOUT_MS = 1200;
+const queryWithTimeout = (query, ms = DATA_TIMEOUT_MS) => Promise.race([
+  query,
+  new Promise(resolve => setTimeout(() => resolve({ data: null, error: new Error('timeout') }), ms))
+]);
+
 export const fallbackSettings = {
   id: 'main',
   brand_name: 'IRONFORM STUDIO',
-  logo_url: 'assets/logo.png',
+  logo_url: 'assets/logo.webp',
   email: 'hello@ironformstudio.com',
   phone: '',
   instagram: 'https://instagram.com/',
@@ -123,39 +129,39 @@ export const fallbackProjects = [
 function byOrder(a,b){return (a.sort_order ?? 999)-(b.sort_order ?? 999)}
 
 export async function loadSettings(){
-  const supabase = getSupabase();
+  const supabase = await getSupabase({ timeoutMs: 1200 });
   if(!supabase) return fallbackSettings;
-  const { data, error } = await supabase.from('site_settings').select('*').eq('id','main').maybeSingle();
+  const { data, error } = await queryWithTimeout(supabase.from('site_settings').select('*').eq('id','main').maybeSingle());
   if(error || !data) return fallbackSettings;
   return {...fallbackSettings,...data, social:{...(fallbackSettings.social||{}),...(data.social||{})}};
 }
 
 export async function loadSections(page=null){
-  const supabase = getSupabase();
+  const supabase = await getSupabase({ timeoutMs: 1200 });
   if(!supabase) return fallbackSections.filter(s=>!page || s.page===page).sort(byOrder);
   let q = supabase.from('page_sections').select('*').eq('visible', true).order('sort_order',{ascending:true});
   if(page) q = q.eq('page', page);
-  const { data, error } = await q;
+  const { data, error } = await queryWithTimeout(q);
   if(error || !data || data.length===0) return fallbackSections.filter(s=>!page || s.page===page).sort(byOrder);
   return data.sort(byOrder);
 }
 
 export async function loadProducts(all=false){
-  const supabase = getSupabase();
+  const supabase = await getSupabase({ timeoutMs: 1200 });
   if(!supabase) return fallbackProducts.filter(p=>all || p.visible).sort(byOrder);
   let q = supabase.from('products').select('*').order('sort_order',{ascending:true});
   if(!all) q = q.eq('visible', true);
-  const { data, error } = await q;
+  const { data, error } = await queryWithTimeout(q);
   if(error || !data || data.length===0) return fallbackProducts.filter(p=>all || p.visible).sort(byOrder);
   return data.sort(byOrder);
 }
 
 export async function loadProjects(all=false){
-  const supabase = getSupabase();
+  const supabase = await getSupabase({ timeoutMs: 1200 });
   if(!supabase) return fallbackProjects.filter(p=>all || p.visible).sort(byOrder);
   let q = supabase.from('projects').select('*').order('sort_order',{ascending:true});
   if(!all) q = q.eq('visible', true);
-  const { data, error } = await q;
+  const { data, error } = await queryWithTimeout(q);
   if(error || !data || data.length===0) return fallbackProjects.filter(p=>all || p.visible).sort(byOrder);
   return data.sort(byOrder);
 }

@@ -1,6 +1,6 @@
 # Ironform Studio Website Kurulumu
 
-Bu paket; İngilizce ana site, Türkçe/İspanyolca dil seçeneği, katalog, projeler, özel sipariş yakında sayfası, iletişim/sipariş formu ve tamamen Türkçe admin paneli içerir.
+Bu paket; İngilizce ana site, Türkçe/İspanyolca dil seçeneği, katalog, projeler, özel sipariş yakında sayfası, iletişim/sipariş formu ve tamamen Türkçe admin paneli içerir. Admin paneline üst menünün en sağındaki giriş/kullanıcı ikonundan da ulaşılır.
 
 ## 1) Supabase kurulumu
 
@@ -73,7 +73,7 @@ Bu sistem frontend içinde service role key kullanmadığı için güvenlidir.
 
 ## 7) Cloudflare Pages'e yükleme
 
-Cloudflare Pages için bu klasörü repo olarak GitHub'a atabilir veya direkt upload edebilirsin.
+Cloudflare Pages için bu ZIP içindeki dosyaları doğrudan kök dizin olarak yükle. Yani `index.html` en üstte görünmeli; dosyalar fazladan bir klasörün içinde kalmamalı. İstersen bu klasörü repo olarak GitHub'a da atabilirsin.
 
 Build ayarı:
 
@@ -85,7 +85,8 @@ Site statik çalışır. Backend olarak Supabase kullanır.
 
 ## 8) Önemli notlar
 
-- Site Supabase bağlanmadan da örnek içeriklerle açılır, ama admin paneli çalışmaz.
+- Site Supabase bağlanmadan da örnek içeriklerle hızlı açılır, ama admin paneli çalışmaz.
+- Ana logo optimize edildi: sitede hafif `assets/logo.webp`, uyumluluk/önizleme için `assets/logo.png` kullanılır.
 - Görseller URL ile çalışır. Admin panelinden Storage'a yükleyip çıkan URL'yi ürün/proje/sayfa görsel alanlarına yapıştırabilirsin.
 - Dil seçenekleri: English, Türkçe, Español.
 - Özel sipariş sayfası şu an bilinçli olarak pasif/yakında modundadır.
@@ -112,7 +113,9 @@ js/
   i18n.js
   supabaseClient.js
 assets/
+  favicon.png
   logo.png
+  logo.webp
   placeholders/
 sql/
   schema.sql

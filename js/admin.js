@@ -24,7 +24,7 @@ function msg(text,type='notice'){
 
 function authScreen(reason=''){
   $('#adminRoot').innerHTML = `<div class="auth-card">
-    <img src="assets/logo.png" alt="Ironform Studio logo">
+    <img src="assets/logo.webp" alt="Ironform Studio logo">
     <h1>Ironform Studio Admin</h1>
     <p>Admin paneli tamamen Türkçedir. Önce Supabase kurulumunu yapıp ilk admin mailini SQL içinde eklemelisin.</p>
     ${reason?`<div class="notice danger-msg">${esc(reason)}</div>`:''}
@@ -89,7 +89,7 @@ async function loadInquiries(){
 function renderShell(){
   $('#adminRoot').innerHTML = `<div class="admin-shell">
     <aside class="admin-sidebar">
-      <div class="admin-logo"><img src="${esc(settings?.logo_url || 'assets/logo.png')}" alt="Logo"><div><strong>IRONFORM</strong><span>Yönetim Paneli</span></div></div>
+      <div class="admin-logo"><img src="${esc(settings?.logo_url || 'assets/logo.webp')}" alt="Logo"><div><strong>IRONFORM</strong><span>Yönetim Paneli</span></div></div>
       <nav class="admin-nav">
         <button data-view="dashboard">Genel Bakış</button>
         <button data-view="settings">Site Ayarları</button>
@@ -145,7 +145,7 @@ function renderSettings(){
     <form id="settingsForm" class="form">
       <div class="admin-grid">
         <div class="field"><label>Marka adı</label><input name="brand_name" value="${esc(settings.brand_name||'IRONFORM STUDIO')}"></div>
-        <div class="field"><label>Logo URL</label><input name="logo_url" value="${esc(settings.logo_url||'assets/logo.png')}"></div>
+        <div class="field"><label>Logo URL</label><input name="logo_url" value="${esc(settings.logo_url||'assets/logo.webp')}"></div>
         <div class="field"><label>E-posta</label><input name="email" value="${esc(settings.email||'')}"></div>
         <div class="field"><label>Telefon</label><input name="phone" value="${esc(settings.phone||'')}"></div>
         <div class="field"><label>Instagram URL</label><input name="instagram" value="${esc(settings.instagram||'')}"></div>
@@ -308,9 +308,9 @@ async function deleteAdmin(email){
 }
 
 async function init(){
-  supabase=getSupabase();
+  supabase=await getSupabase({ timeoutMs: 8000, silent: false });
   if(!supabase){
-    $('#adminRoot').innerHTML=`<div class="auth-card"><img src="assets/logo.png" alt="Logo"><h1>Supabase ayarı eksik</h1><p><b>js/config.js</b> dosyasına Supabase Project URL ve anon public key yazmalısın.</p><div class="notice">Kurulum için ZIP içindeki <b>README-KURULUM.md</b> dosyasını aç.</div></div>`;
+    $('#adminRoot').innerHTML=`<div class="auth-card"><img src="assets/logo.webp" alt="Logo"><h1>Supabase bağlantısı kurulamadı</h1><p><b>js/config.js</b> içindeki Supabase bilgilerini ve internet bağlantısını kontrol etmelisin.</p><div class="notice">Kurulum için ZIP içindeki <b>README-KURULUM.md</b> dosyasını aç.</div></div>`;
     return;
   }
   const res=await supabase.auth.getSession(); session=res.data.session;

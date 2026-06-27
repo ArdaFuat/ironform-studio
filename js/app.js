@@ -3,6 +3,7 @@ import { loadSettings, loadSections, loadProducts, loadProjects, processSteps, f
 import { getSupabase } from './supabaseClient.js';
 
 const $ = (s, r=document) => r.querySelector(s);
+const abs = (path) => new URL(path, document.baseURI).href;
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 const esc = (v='') => String(v).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const imgOf = (arr, fallback='assets/placeholders/eagle.svg') => Array.isArray(arr) && arr.length ? arr[0] : fallback;
@@ -19,7 +20,7 @@ function navLinks(){
     ['custom-orders.html','custom',tr('custom')],
     ['about.html','about',tr('about')],
     ['contact.html','contact',tr('contact')]
-  ];
+  ].map(([href,key,label]) => [abs(href), key, label]);
 }
 
 function header(active){
@@ -28,8 +29,8 @@ function header(active){
     <div class="noise"></div>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="index.html" aria-label="Ironform Studio home">
-          <img src="${esc(settings.logo_url || 'assets/logo.png')}" alt="Ironform Studio logo">
+        <a class="brand" href="${abs('index.html')}" aria-label="Ironform Studio home">
+          <img src="${esc(settings.logo_url || 'assets/logo.webp')}" alt="Ironform Studio logo">
           <span><strong>IRONFORM</strong><span>STUDIO</span></span>
         </a>
         <nav class="nav-links" id="navLinks" aria-label="Main navigation">
@@ -37,7 +38,10 @@ function header(active){
         </nav>
         <div class="nav-actions">
           <select class="lang-select" id="languageSelect" aria-label="Language">${langOptions}</select>
-          <a class="btn small accent" href="contact.html">${tr('contactCta')}</a>
+          <a class="btn small accent" href="${abs('contact.html')}">${tr('contactCta')}</a>
+          <a class="admin-login-icon" href="${abs('admin.html')}" aria-label="Admin panel giriş" title="Admin panel">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/></svg>
+          </a>
           <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu"><span></span></button>
         </div>
       </div>
@@ -50,15 +54,15 @@ function footer(){
       <div class="container">
         <div class="footer-grid">
           <div>
-            <a class="brand" href="index.html">
-              <img src="${esc(settings.logo_url || 'assets/logo.png')}" alt="Ironform Studio logo">
+            <a class="brand" href="${abs('index.html')}">
+              <img src="${esc(settings.logo_url || 'assets/logo.webp')}" alt="Ironform Studio logo">
               <span><strong>IRONFORM</strong><span>STUDIO</span></span>
             </a>
             <p>${tr('footerText')}</p>
             <p class="pill">${tr('madeFor')}</p>
           </div>
           <div><h4>${tr('quickLinks')}</h4>${navLinks().slice(0,4).map(([h,_,l])=>`<a href="${h}">${l}</a>`).join('')}</div>
-          <div><h4>${tr('studio')}</h4>${navLinks().slice(4).map(([h,_,l])=>`<a href="${h}">${l}</a>`).join('')}<a href="admin.html">${tr('admin')}</a></div>
+          <div><h4>${tr('studio')}</h4>${navLinks().slice(4).map(([h,_,l])=>`<a href="${h}">${l}</a>`).join('')}<a href="${abs('admin.html')}">${tr('admin')}</a></div>
           <div><h4>${tr('getInTouch')}</h4><a href="mailto:${esc(settings.email||'hello@ironformstudio.com')}">${esc(settings.email||'hello@ironformstudio.com')}</a>${settings.phone?`<a href="tel:${esc(settings.phone)}">${esc(settings.phone)}</a>`:''}${settings.instagram?`<a href="${esc(settings.instagram)}" target="_blank" rel="noreferrer">Instagram</a>`:''}</div>
         </div>
         <div class="copyright"><span>© ${new Date().getFullYear()} Ironform Studio. ${tr('rights')}</span><span>Low-poly metal sculpture studio</span></div>
@@ -194,7 +198,7 @@ async function renderHome(){
           <div class="trust-row"><span class="tag">${tr('madeFor')}</span><span class="tag">Laser-cut steel</span><span class="tag">Custom scale concepts</span></div>
         </div>
         <div class="hero-card">
-          <div class="hero-logo-wrap"><img src="${esc(settings.logo_url||'assets/logo.png')}" alt="Ironform Studio logo"></div>
+          <div class="hero-logo-wrap"><img src="${esc(settings.logo_url||'assets/logo.webp')}" alt="Ironform Studio logo"></div>
           <div class="hero-stat"><div><strong>${tr('stat1')}</strong><span>${tr('stat1s')}</span></div><div><strong>${tr('stat2')}</strong><span>${tr('stat2s')}</span></div><div><strong>${tr('stat3')}</strong><span>${tr('stat3s')}</span></div></div>
         </div>
       </div>
@@ -240,8 +244,7 @@ async function renderCustom(){
 }
 
 async function renderContact(){
-  const sections = await loadSections('contact'); const s = sectionBy(sections,'intro');
-  const products = await loadProducts();
+  const [sections, products] = await Promise.all([loadSections('contact'), loadProducts()]); const s = sectionBy(sections,'intro');
   $('#main').innerHTML = `${renderPageHero({eyebrow:'Contact', title:pick(s.content?.title), subtitle:pick(s.content?.subtitle)})}
   <section class="section"><div class="container split"><div><p style="color:var(--muted)">${esc(pick(s.content?.body))}</p><div class="feature-list"><div class="feature-item"><span>@</span><div><strong>Email</strong><small>${esc(settings.email||'hello@ironformstudio.com')}</small></div></div>${settings.instagram?`<div class="feature-item"><span>ig</span><div><strong>Instagram</strong><small>${esc(settings.instagram)}</small></div></div>`:''}<div class="feature-item"><span>US</span><div><strong>Market</strong><small>${esc(settings.address||'United States')}</small></div></div></div></div><div class="card pad"><h2>${tr('inquiry')}</h2><form id="inquiryForm" class="form"><div class="form-grid"><div class="field"><label>${tr('name')}</label><input name="name" required></div><div class="field"><label>${tr('email')}</label><input name="email" type="email" required></div></div><div class="form-grid"><div class="field"><label>${tr('phone')}</label><input name="phone"></div><div class="field"><label>${tr('interest')}</label><select name="interest"><option>Catalog piece</option><option>Commercial project</option><option>Outdoor sculpture</option><option>Early custom order</option>${products.map(p=>`<option>${esc(pick(p.title))}</option>`).join('')}</select></div></div><div class="field"><label>${tr('message')}</label><textarea name="message" required placeholder="Tell us the piece, size, location and timing you have in mind."></textarea></div><button class="btn accent" type="submit">${tr('submit')}</button><div id="formMsg"></div></form></div></div></section>`;
   bindInquiryForm();
@@ -253,7 +256,7 @@ function bindInquiryForm(){
     const msg = $('#formMsg'); msg.innerHTML='';
     const form = new FormData(e.currentTarget);
     const payload = Object.fromEntries(form.entries());
-    const supabase = getSupabase();
+    const supabase = await getSupabase({ timeoutMs: 5000, silent: false });
     if(!supabase){ msg.innerHTML = `<div class="notice danger-msg">${tr('inquiryError')}</div>`; return; }
     const { error } = await supabase.from('order_inquiries').insert(payload);
     if(error) msg.innerHTML = `<div class="notice danger-msg">${tr('inquiryError')}<br><small>${esc(error.message)}</small></div>`;
@@ -281,10 +284,21 @@ async function renderProjectDetail(){
   bindGallery();
 }
 
+function pageFromLocation(){
+  const file = location.pathname.split('/').filter(Boolean).pop() || 'index.html';
+  const name = file.replace(/\.html$/,'');
+  const routes = {
+    '':'home', 'index':'home', 'catalog':'catalog', 'projects':'projects',
+    'what-we-do':'what', 'about':'about', 'custom-orders':'custom',
+    'contact':'contact', 'product':'product', 'project':'project'
+  };
+  return routes[name] || document.body.dataset.page || 'home';
+}
+
 async function init(){
-  settings = await loadSettings();
-  const page = document.body.dataset.page || 'home';
+  const page = pageFromLocation();
   const active = {home:'home',catalog:'catalog',product:'catalog',projects:'projects',project:'projects',what:'what',about:'about',custom:'custom',contact:'contact'}[page] || page;
+  settings = await loadSettings();
   setShell(active);
   if(page==='home') await renderHome();
   if(page==='catalog') await renderCatalog();

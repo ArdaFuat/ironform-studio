@@ -5,3 +5,6 @@
 /contact /contact.html 200
 /custom-orders /custom-orders.html 200
 /what-we-do /what-we-do.html 200
+/product/* /product.html 200
+/project/* /project.html 200
+/* /index.html 200
