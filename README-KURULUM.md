@@ -1,15 +1,27 @@
-# Ironform Studio - Cloudflare Fix v3
+# Ironform Studio - Hızlı Cloudflare paketi
 
-Bu sürümde `_redirects` tamamen kaldırıldı. Cloudflare'ın clean URL yönlendirmesi ile çakışıp `/catalog` gibi sayfalarda `ERR_TOO_MANY_REDIRECTS` hatası verebildiği için site artık doğrudan `.html` sayfalarına link veriyor.
+Bu sürümde public site tamamen statik açılır. Ana sayfa, katalog ve diğer sayfalar Supabase beklemez; bu yüzden ilk ekran pat diye gelir.
 
-## Deploy
+## Cloudflare ayarı
 
-1. GitHub repo içindeki eski dosyaları silip bu ZIP'in içindekileri köke koyun.
-2. Özellikle eski `_redirects` dosyasının repo'da kalmadığından emin olun.
-3. `.assetsignore` dosyasını repo'da bırakın. Bu dosya `.git`, `.wrangler`, `node_modules`, `sql` gibi gereksiz şeylerin Cloudflare'a asset olarak yüklenmesini engeller.
-4. Cloudflare'da tekrar deploy edin.
-5. Tarayıcıda `https://ironformstudio.com/catalog.html` gibi `.html` adresleriyle test edin. Menü linkleri zaten bu adreslere gider.
+Build command:
 
-## Not
+```bash
+npx wrangler deploy
+```
 
-Eğer hâlâ `/catalog` adresinde hata görürseniz bu eski Cloudflare cache'i veya eski redirect kuralıdır. Cloudflare dashboard > Rules > Redirect Rules / Page Rules kısmında `/catalog` veya `.html` kaldırma yönlendirmesi varsa kapatın, sonra Cache > Purge Everything yapın.
+Output directory boş kalabilir. `wrangler.toml` dosyası `public` klasörünü asset olarak deploy eder.
+
+## Önemli
+
+- Eski repodaki `_redirects` dosyasını sil.
+- Bu pakette public sayfalar root path ile çalışır: `/catalog`, `/projects`, `/admin`.
+- Admin panel hâlâ Supabase ile çalışır ve `/admin` adresindedir.
+- Normal ziyaretçiler için Supabase/CDN bekleme yoktur.
+- Deploy sonrası Cloudflare > Caching > Purge Everything yap.
+
+## Dosya yapısı
+
+- `public/` ziyaretçiye giden site dosyaları
+- `src/index.js` Cloudflare Worker router
+- `wrangler.toml` Cloudflare deploy config
