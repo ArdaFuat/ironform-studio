@@ -3,7 +3,7 @@
 // 2) Run sql/schema.sql in Supabase SQL Editor
 // 3) Copy Project URL and anon public key here
 export const SUPABASE_URL = "https://glzcayauggpliqbkrcmo.supabase.co";
-export const SUPABASE_ANON_KEY = "BURAYA_API_KEYS_EKRANINDAKI_sb_publishable_KEY";
+export const SUPABASE_ANON_KEY = "sb_publishable_AzoS1-9ZHRgMPUJBttfvUA_5wuWEeO8";
 export const STORAGE_BUCKET = "site-assets";
 
 export const isSupabaseConfigured = () =>
