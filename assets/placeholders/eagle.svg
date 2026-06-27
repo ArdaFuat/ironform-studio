@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#101317"/><stop offset="1" stop-color="#30363d"/></linearGradient>
+    <radialGradient id="r" cx="50%" cy="25%" r="80%"><stop stop-color="#f08a3c" stop-opacity=".45"/><stop offset=".42" stop-color="#101317" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#08090b"/>
+  <rect width="1200" height="800" fill="url(#r)"/>
+  <g fill="url(#g)" stroke="#d7d2c7" stroke-width="4" stroke-opacity=".28" transform="translate(600 380)">
+    <polygon points="-90,-40 -390,-210 -330,-45 -120,60"/>
+    <polygon points="90,-40 390,-210 330,-45 120,60"/>
+    <polygon points="-120,70 -370,10 -320,125 -80,160"/>
+    <polygon points="120,70 370,10 320,125 80,160"/>
+    <polygon points="-80,-90 0,-155 80,-90 55,120 0,220 -55,120"/>
+    <polygon points="-45,-125 0,-170 45,-125 0,-100" fill="#4a5157"/>
+    <polygon points="-40,228 -8,360 0,225"/><polygon points="40,228 8,360 0,225"/>
+  </g>
+  <text x="600" y="710" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#d7d2c7" letter-spacing="10">LOW POLY METAL ART</text>
+</svg>

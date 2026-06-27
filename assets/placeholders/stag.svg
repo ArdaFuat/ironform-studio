@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs><linearGradient id="m" x1="0" x2="1"><stop stop-color="#121417"/><stop offset="1" stop-color="#4b525c"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="#08090b"/>
+  <rect x="60" y="60" width="1080" height="680" rx="26" fill="#111318" stroke="#ffffff" stroke-opacity=".08"/>
+  <g transform="translate(600 390)" fill="url(#m)" stroke="#e8e2d4" stroke-opacity=".23" stroke-width="4">
+    <polygon points="-90,-70 0,-165 90,-70 70,105 0,210 -70,105"/>
+    <polygon points="-85,-95 -260,-275 -225,-95 -325,-145 -260,0 -110,-20"/>
+    <polygon points="85,-95 260,-275 225,-95 325,-145 260,0 110,-20"/>
+    <polygon points="-60,15 0,70 60,15 0,145" fill="#0d0f12"/>
+  </g>
+  <text x="600" y="710" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="38" fill="#d7d2c7" letter-spacing="8">ARCHITECTURAL STATEMENT PIECES</text>
+</svg>
