@@ -25,3 +25,8 @@ Output directory boş kalabilir. `wrangler.toml` dosyası `public` klasörünü 
 - `public/` ziyaretçiye giden site dosyaları
 - `src/index.js` Cloudflare Worker router
 - `wrangler.toml` Cloudflare deploy config
+
+## v5 Notu
+- Üst menüye EN / TR / ES dil seçici eklendi.
+- Seçilen dil tarayıcıda saklanır, sayfalar arasında korunur.
+- Public sayfalar hâlâ statik ve hızlı açılacak şekilde kalır.
