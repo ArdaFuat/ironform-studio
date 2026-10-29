@@ -5,12 +5,6 @@ const STATIC_ROUTES = new Map([
   ['/catalog', '/catalog.html'],
   ['/catalog/', '/catalog.html'],
   ['/catalog.html', '/catalog.html'],
-  ['/projects', '/projects.html'],
-  ['/projects/', '/projects.html'],
-  ['/projects.html', '/projects.html'],
-  ['/what-we-do', '/what-we-do.html'],
-  ['/what-we-do/', '/what-we-do.html'],
-  ['/what-we-do.html', '/what-we-do.html'],
   ['/custom-orders', '/custom-orders.html'],
   ['/custom-orders/', '/custom-orders.html'],
   ['/custom-orders.html', '/custom-orders.html'],
@@ -20,9 +14,6 @@ const STATIC_ROUTES = new Map([
   ['/contact', '/contact.html'],
   ['/contact/', '/contact.html'],
   ['/contact.html', '/contact.html'],
-  ['/admin', '/admin.html'],
-  ['/admin/', '/admin.html'],
-  ['/admin.html', '/admin.html']
 ]);
 
 function cleanSlug(value) {
@@ -34,21 +25,12 @@ function assetPathFor(url) {
   if (STATIC_ROUTES.has(p)) return STATIC_ROUTES.get(p);
 
   if (p === '/product' || p === '/product.html') {
-    const slug = cleanSlug(url.searchParams.get('slug')) || 'eagle-wall-sculpture';
+    const slug = cleanSlug(url.searchParams.get('slug')) || 'illuminated-floor-eagle';
     return `/products/${slug}.html`;
   }
   if (p.startsWith('/product/')) {
     const slug = cleanSlug(p.split('/').filter(Boolean)[1]);
     return `/products/${slug}.html`;
-  }
-
-  if (p === '/project' || p === '/project.html') {
-    const slug = cleanSlug(url.searchParams.get('slug')) || 'signature-eagle-brand-wall';
-    return `/project-details/${slug}.html`;
-  }
-  if (p.startsWith('/project/')) {
-    const slug = cleanSlug(p.split('/').filter(Boolean)[1]);
-    return `/project-details/${slug}.html`;
   }
 
   return p;
@@ -57,6 +39,17 @@ function assetPathFor(url) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (['/product/eagle-wall-sculpture', '/product/eagle-wall-sculpture/', '/products/eagle-wall-sculpture.html'].includes(url.pathname) ||
+        (['/product', '/product.html'].includes(url.pathname) && url.searchParams.get('slug') === 'eagle-wall-sculpture')) {
+      return Response.redirect(new URL('/product/illuminated-floor-eagle', url.origin).href, 301);
+    }
+    // Keep existing bookmarks useful after consolidating the site navigation.
+    if (/^\/what-we-do(?:\/|\.html)?$/.test(url.pathname)) {
+      return Response.redirect(new URL('/about', url.origin).href, 301);
+    }
+    if (/^\/(?:projects|project)(?:\/|\.html|$)/.test(url.pathname) || url.pathname.startsWith('/project-details/')) {
+      return Response.redirect(new URL('/catalog', url.origin).href, 301);
+    }
     if (!['GET', 'HEAD'].includes(request.method)) {
       return env.ASSETS.fetch(request);
     }
@@ -68,17 +61,32 @@ export default {
 
     if (response.status !== 404) {
       const headers = new Headers(response.headers);
-      if (targetPath.startsWith('/assets/') || targetPath.startsWith('/js/') || targetPath === '/style.css') {
+      if (targetPath.startsWith('/js/') || targetPath === '/style.css') {
+        headers.set('Cache-Control', 'no-cache');
+      } else if (targetPath.startsWith('/assets/')) {
         headers.set('Cache-Control', 'public, max-age=31536000, immutable');
       } else if (targetPath.endsWith('.html')) {
-        headers.set('Cache-Control', 'public, max-age=0, must-revalidate');
+        headers.set('Cache-Control', 'private, no-store');
       }
-      return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+      const result = new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+      return withDefaultLanguage(result, request);
     }
 
     const nfUrl = new URL(request.url);
     nfUrl.pathname = '/404.html';
     const nf = await env.ASSETS.fetch(new Request(nfUrl, request));
-    return new Response(nf.body, { status: 404, headers: nf.headers });
+    const headers = new Headers(nf.headers);
+    headers.set('Cache-Control', 'private, no-store');
+    return withDefaultLanguage(new Response(nf.body, { status: 404, headers }), request);
   }
 };
+
+function withDefaultLanguage(response, request) {
+  if (!response.headers.get('Content-Type')?.includes('text/html')) return response;
+  const language = request.cf?.country === 'TR' ? 'tr' : 'en';
+  return new HTMLRewriter().on('html', {
+    element(element) {
+      element.setAttribute('data-default-language', language);
+    }
+  }).transform(response);
+}

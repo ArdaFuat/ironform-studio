@@ -4,6 +4,48 @@
 
   const translations = {
     tr: {
+      "Steel, with a point of view.": "Çeliğe farklı bir bakış.",
+      "Your idea. Our craft.": "Sizin fikriniz. Bizim işçiliğimiz.",
+      "Let’s make something lasting.": "Kalıcı bir iz bırakalım.",
+      "Your email app opens with a draft. Send it from there.": "E-posta uygulamanızda bir taslak açılır. Gönderimi oradan tamamlayabilirsiniz.",
+      "For general questions, partnerships and studio communication.": "Genel sorular, iş birlikleri ve stüdyo iletişimi için.",
+      "A piece made for your space.": "Mekanınıza özel bir parça.",
+      "Tell us the form, size, finish and lighting you have in mind.": "Düşündüğünüz formu, ölçüyü, kaplamayı ve aydınlatmayı anlatın.",
+      "3D studio model": "3D stüdyo modeli",
+      "Illuminated Floor Eagle": "Işıklı Zemin Kartalı",
+      "A faceted gold-tone eagle on a sculptural pedestal. Available with lighting or unlit on request.": "Heykelsi kaide üzerinde, altın görünümlü geometrik kartal. İsteğe bağlı ışıklı veya ışıksız üretilebilir.",
+      "Illuminated floor eagle": "Işıklı zemin kartalı",
+      "A gold-tone floor eagle. Available illuminated or unlit.": "Altın görünümlü zemin kartalı. Işıklı veya ışıksız, tercihinize göre.",
+      "Explore the eagle": "Kartalı keşfet",
+      "Enable motion": "Hareketi aç",
+      "Pause motion": "Hareketi durdur",
+      "Scroll to explore": "Kaydırarak keşfet",
+      "Studio visualization": "Stüdyo görselleştirmesi",
+      "Illuminated / unlit": "Işıklı / ışıksız",
+      "Format": "Form",
+      "Freestanding floor sculpture": "Kaide üzerinde zemin heykeli",
+      "Gold-tone reflective finish": "Altın görünümlü yansıtıcı yüzey",
+      "Lighting": "Aydınlatma",
+      "Confirm on inquiry": "Talep sırasında netleştirilir",
+      "The photographed model is illuminated. An unlit version can also be made on request.": "Fotoğraflardaki model ışıklıdır. İsteğe bağlı olarak ışıksız versiyonu da üretilebilir.",
+      "Gold-tone floor eagle, three-quarter view": "Altın görünümlü zemin kartalı, çapraz görünüm",
+      "Three-quarter view": "Çapraz görünüm",
+      "Front view": "Önden görünüm",
+      "Illuminated view": "Işıklı görünüm",
+      "Metal detail": "Metal detayı",
+      "pieces": "ürün",
+      "No pieces found": "Ürün bulunamadı",
+      "Try another search or category.": "Farklı bir arama veya kategori deneyin.",
+      "Clear filters": "Filtreleri temizle",
+      "Search catalog": "Katalogda ara",
+      "Product categories": "Ürün kategorileri",
+      "Steel.": "Çelik.",
+      "Shaped to stand out.": "İz bırakan form.",
+      "Low-poly metal sculptures. Precise geometry, lasting presence.": "Low-poly metal heykeller. Kusursuz geometri, kalıcı bir iz.",
+      "Hand-finished": "Elde tamamlandı",
+      'Choose language': 'Dil seçin',
+      'Language': 'Dil',
+      "From animal sculptures and geometric wall art to freestanding statement pieces, we shape steel into work with a distinct architectural presence. Our catalog brings these pieces together, while custom requests start with the form, scale, finish and space you have in mind.": "Hayvan heykellerinden geometrik duvar sanatına ve bağımsız heykellere kadar çeliği, mimari bir duruşu olan eserlere dönüştürüyoruz. Kataloğumuz bu parçaları bir araya getiriyor; özel talepler ise düşündüğünüz form, ölçü, kaplama ve mekandan başlıyor.",
       'Home': 'Ana Sayfa',
       'Catalog': 'Katalog',
       'What We Do': 'Neler Yapıyoruz',
@@ -11,7 +53,6 @@
       'Custom Orders': 'Özel Sipariş',
       'About': 'Hakkımızda',
       'Contact': 'İletişim',
-      'Admin': 'Admin',
       'Start an Inquiry': 'Talep Oluştur',
       'Start an inquiry': 'Talep oluştur',
       'View Catalog': 'Kataloğu Gör',
@@ -110,7 +151,6 @@
 
       'Tell us what kind of piece you want to build.': 'Nasıl bir parça yaptırmak istediğini anlat.',
       'Send an inquiry for catalog pieces, project partnerships, commercial installations or early custom order conversations.': 'Katalog ürünleri, proje iş birlikleri, ticari kurulumlar veya erken özel sipariş görüşmeleri için talep gönder.',
-      'The form is saved directly into Supabase when the backend is connected. You can review incoming requests from the Turkish admin panel.': 'Backend bağlandığında form talepleri doğrudan Supabase’e kaydedilir. Gelen talepleri Türkçe admin panelinden inceleyebilirsin.',
       'Email': 'E-posta',
       'Market': 'Pazar',
       'Inquiry Form': 'Talep Formu',
@@ -164,7 +204,49 @@
     },
 
     es: {
-      'Home': 'Inicio', 'Catalog': 'Catálogo', 'What We Do': 'Qué Hacemos', 'Projects': 'Proyectos', 'Custom Orders': 'Pedidos Especiales', 'About': 'Nosotros', 'Contact': 'Contacto', 'Admin': 'Admin',
+      "Steel, with a point of view.": "Acero con personalidad.",
+      "Your idea. Our craft.": "Tu idea. Nuestro oficio.",
+      "Let’s make something lasting.": "Creemos algo que perdure.",
+      "Your email app opens with a draft. Send it from there.": "Se abrirá un borrador en tu aplicación de correo. Envíalo desde allí.",
+      "For general questions, partnerships and studio communication.": "Para preguntas generales, colaboraciones y contacto con el estudio.",
+      "A piece made for your space.": "Una pieza para tu espacio.",
+      "Tell us the form, size, finish and lighting you have in mind.": "Cuéntanos la forma, el tamaño, el acabado y la iluminación que tienes en mente.",
+      "3D studio model": "Modelo 3D de estudio",
+      "Illuminated Floor Eagle": "Águila de suelo iluminada",
+      "A faceted gold-tone eagle on a sculptural pedestal. Available with lighting or unlit on request.": "Águila geométrica en tono dorado sobre pedestal escultórico. Disponible con o sin iluminación bajo pedido.",
+      "Illuminated floor eagle": "Águila de suelo iluminada",
+      "A gold-tone floor eagle. Available illuminated or unlit.": "Águila de suelo en tono dorado. Con o sin iluminación, a tu elección.",
+      "Explore the eagle": "Descubrir el águila",
+      "Enable motion": "Activar movimiento",
+      "Pause motion": "Pausar movimiento",
+      "Scroll to explore": "Desliza para descubrir",
+      "Studio visualization": "Visualización de estudio",
+      "Illuminated / unlit": "Con / sin iluminación",
+      "Format": "Formato",
+      "Freestanding floor sculpture": "Escultura de suelo sobre pedestal",
+      "Gold-tone reflective finish": "Acabado reflectante en tono dorado",
+      "Lighting": "Iluminación",
+      "Confirm on inquiry": "Consultar al solicitar información",
+      "The photographed model is illuminated. An unlit version can also be made on request.": "El modelo fotografiado incluye iluminación. También puede fabricarse sin iluminación bajo pedido.",
+      "Gold-tone floor eagle, three-quarter view": "Águila de suelo dorada, vista de tres cuartos",
+      "Three-quarter view": "Vista de tres cuartos",
+      "Front view": "Vista frontal",
+      "Illuminated view": "Vista iluminada",
+      "Metal detail": "Detalle del metal",
+      "pieces": "piezas",
+      "No pieces found": "No se encontraron piezas",
+      "Try another search or category.": "Prueba otra búsqueda o categoría.",
+      "Clear filters": "Borrar filtros",
+      "Search catalog": "Buscar en el catálogo",
+      "Product categories": "Categorías de productos",
+      "Steel.": "Acero.",
+      "Shaped to stand out.": "Forma que destaca.",
+      "Low-poly metal sculptures. Precise geometry, lasting presence.": "Esculturas de metal low-poly. Geometría precisa, presencia duradera.",
+      "Hand-finished": "Acabado a mano",
+      'Choose language': 'Elegir idioma',
+      'Language': 'Idioma',
+      "From animal sculptures and geometric wall art to freestanding statement pieces, we shape steel into work with a distinct architectural presence. Our catalog brings these pieces together, while custom requests start with the form, scale, finish and space you have in mind.": "Desde esculturas de animales y arte mural geométrico hasta piezas independientes, damos forma al acero para crear obras con presencia arquitectónica. Nuestro catálogo reúne estas piezas; los encargos personalizados parten de la forma, la escala, el acabado y el espacio que tienes en mente.",
+      'Home': 'Inicio', 'Catalog': 'Catálogo', 'What We Do': 'Qué Hacemos', 'Projects': 'Proyectos', 'Custom Orders': 'Pedidos Especiales', 'About': 'Nosotros', 'Contact': 'Contacto',
       'Start an Inquiry': 'Enviar Consulta', 'Start an inquiry': 'Enviar consulta', 'View Catalog': 'Ver Catálogo', 'View details': 'Ver detalles', 'View project': 'Ver proyecto', 'Back to Catalog': 'Volver al Catálogo', 'Back to Projects': 'Volver a Proyectos', 'Go Home': 'Ir al Inicio',
       'Page not found': 'Página no encontrada', 'The page you requested does not exist.': 'La página solicitada no existe.',
 
@@ -234,7 +316,6 @@
 
       'Tell us what kind of piece you want to build.': 'Cuéntanos qué tipo de pieza quieres construir.',
       'Send an inquiry for catalog pieces, project partnerships, commercial installations or early custom order conversations.': 'Envía una consulta para piezas de catálogo, alianzas de proyecto, instalaciones comerciales o pedidos especiales iniciales.',
-      'The form is saved directly into Supabase when the backend is connected. You can review incoming requests from the Turkish admin panel.': 'Cuando el backend esté conectado, el formulario se guarda directamente en Supabase. Puedes revisar las solicitudes en el panel de administración.',
       'Email': 'Email', 'Market': 'Mercado', 'Inquiry Form': 'Formulario de Consulta', 'Name': 'Nombre', 'Phone': 'Teléfono', 'Interest': 'Interés',
       'Catalog piece': 'Pieza de catálogo', 'Commercial project': 'Proyecto comercial', 'Outdoor sculpture': 'Escultura exterior', 'Early custom order': 'Pedido especial inicial', 'Message': 'Mensaje', 'Prepare Email': 'Preparar Email',
 
@@ -253,9 +334,11 @@
 
   const placeholders = {
     tr: {
+      'Search catalog...': 'Katalogda ara...',
       'Tell us the piece, size, location and timing you have in mind.': 'Aklındaki parça, ölçü, konum ve zamanlamayı anlat.'
     },
     es: {
+      'Search catalog...': 'Buscar en el catálogo...',
       'Tell us the piece, size, location and timing you have in mind.': 'Cuéntanos la pieza, tamaño, ubicación y plazo que tienes en mente.'
     }
   };
@@ -317,9 +400,11 @@
   });
 
   function getLang() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (supported.includes(saved)) return saved;
-    return 'en';
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (supported.includes(saved)) return saved;
+    } catch (_) { /* Language switching also works without browser storage. */ }
+    return document.documentElement.dataset.defaultLanguage === 'tr' ? 'tr' : 'en';
   }
 
   function translateString(text, lang) {
@@ -355,7 +440,8 @@
 
   function translateAttributes(lang) {
     document.documentElement.lang = lang;
-    if (document.title) document.title = translateString(document.title, lang);
+    if (!document.documentElement.dataset.originalTitle) document.documentElement.dataset.originalTitle = document.title;
+    document.title = translateString(document.documentElement.dataset.originalTitle, lang);
     document.querySelectorAll('[placeholder]').forEach((el) => {
       if (!el.dataset.originalPlaceholder) el.dataset.originalPlaceholder = el.getAttribute('placeholder') || '';
       const original = el.dataset.originalPlaceholder;
@@ -374,19 +460,39 @@
 
   function applyLanguage(lang) {
     if (!supported.includes(lang)) lang = 'en';
-    localStorage.setItem(STORAGE_KEY, lang);
     translateTextNodes(lang);
     translateAttributes(lang);
-    const select = document.getElementById('languageSelect');
-    if (select) select.value = lang;
+    const label = document.getElementById('currentLanguage');
+    if (label) label.textContent = lang.toUpperCase();
+    document.querySelectorAll('[data-language]').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.language === lang));
+    });
+    document.dispatchEvent(new Event('ironform:languagechange'));
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    const select = document.getElementById('languageSelect');
+    const picker = document.getElementById('languagePicker');
     const lang = getLang();
     applyLanguage(lang);
-    if (select) {
-      select.addEventListener('change', () => applyLanguage(select.value));
-    }
+    document.querySelectorAll('[data-language]').forEach(button => {
+      button.addEventListener('click', () => {
+        const next = button.dataset.language;
+        try { localStorage.setItem(STORAGE_KEY, next); } catch (_) {}
+        applyLanguage(next);
+        if (picker) {
+          picker.open = false;
+          picker.querySelector('summary').focus();
+        }
+      });
+    });
+    document.addEventListener('click', event => {
+      if (picker && !picker.contains(event.target)) picker.open = false;
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && picker?.open) {
+        picker.open = false;
+        picker.querySelector('summary').focus();
+      }
+    });
   });
 })();
