@@ -52,9 +52,9 @@ body.lightbox-open{overflow:hidden}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(8,9,11,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .brand{display:flex;align-items:center;justify-content:flex-start;flex:0 0 auto;gap:12px;padding:5px 0;line-height:0}
-/* Crop to the original bird; the SVG filter turns the backdrop transparent and the mark white. */
+/* Pre-rendered transparent brand assets work without browser-specific filters. */
 .brand-mark{position:relative;display:block;width:46px;aspect-ratio:292 / 287;overflow:hidden}
-.brand-mark img,.brand-wordmark img{position:absolute;max-width:none;width:175.3425%;height:auto;left:-37.6712%;top:-23.3449%;filter:url("/assets/logo-white-filter.svg?v=refined-4#white");border:0;border-radius:0;background:transparent;box-shadow:none}
+.brand-mark img,.brand-wordmark img{display:block;position:static;width:100%;max-width:100%;height:auto;filter:none;border:0;border-radius:0;background:transparent;box-shadow:none}
 .brand:focus-visible{outline:2px solid var(--accent);outline-offset:6px;border-radius:3px}
 .nav-links{display:flex;align-items:center;justify-content:center;gap:2px;flex:1}
 .nav-links a{color:var(--muted);font-size:14px;font-weight:650;padding:10px 10px;border-radius:999px;transition:.2s ease;white-space:nowrap}
@@ -157,7 +157,7 @@ body.lightbox-open{overflow:hidden}
 .footer .brand-mark{width:54px}
 
 .brand-wordmark{position:relative;display:block;width:150px;aspect-ratio:380 / 76;overflow:hidden}
-.brand-wordmark img{width:134.7368%;left:-18.4211%;top:-489.4737%}
+
 @media(max-width:640px){.brand-wordmark{width:135px}.hero-logo-lockup{gap:14px}.hero-logo-lockup .brand-mark{width:100px;flex-basis:100px}.hero-logo-lockup .brand-wordmark{width:175px;flex-basis:175px}}
 
 /* Quiet, translucent navigation with a native system type scale. */
