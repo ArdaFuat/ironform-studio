@@ -68,7 +68,7 @@
   const empty = document.getElementById('catalogEmpty');
   const normalize = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i');
   if (grid) Array.from(grid.children).forEach(card => {
-    categories.set(card, card.querySelector('.tag')?.textContent || '');
+    categories.set(card, card.dataset.category || card.querySelector('.tag')?.textContent || '');
     originalText.set(card, card.textContent);
   });
   function applyFilter(){

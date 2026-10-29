@@ -4,6 +4,7 @@
 
   const translations = {
     tr: {
+      "All products": "Tüm ürünler",
       "Steel, with a point of view.": "Çeliğe farklı bir bakış.",
       "Your idea. Our craft.": "Sizin fikriniz. Bizim işçiliğimiz.",
       "Let’s make something lasting.": "Kalıcı bir iz bırakalım.",
@@ -204,6 +205,7 @@
     },
 
     es: {
+      "All products": "Todos los productos",
       "Steel, with a point of view.": "Acero con personalidad.",
       "Your idea. Our craft.": "Tu idea. Nuestro oficio.",
       "Let’s make something lasting.": "Creemos algo que perdure.",
