@@ -43,6 +43,14 @@ export default {
         (['/product', '/product.html'].includes(url.pathname) && url.searchParams.get('slug') === 'eagle-wall-sculpture')) {
       return Response.redirect(new URL('/product/illuminated-floor-eagle', url.origin).href, 301);
     }
+    if (['/product/wolf-geometric-wall-art', '/product/wolf-geometric-wall-art/', '/products/wolf-geometric-wall-art.html'].includes(url.pathname) || (['/product', '/product.html'].includes(url.pathname) && url.searchParams.get('slug') === 'wolf-geometric-wall-art')) {
+      return Response.redirect(new URL('/product/roaring-lion-head', url.origin).href, 301);
+    }
+    const retiredProducts = new Map([['panther-statement-piece', '/product/floor-panther'], ['stag-lobby-installation', '/catalog']]);
+    const requestedProduct = url.pathname.startsWith('/product/') ? cleanSlug(url.pathname.split('/')[2]) : url.pathname.startsWith('/products/') ? cleanSlug(url.pathname.split('/')[2].replace(/\.html$/, '')) : ['/product', '/product.html'].includes(url.pathname) ? url.searchParams.get('slug') : null;
+    if (retiredProducts.has(requestedProduct)) {
+      return Response.redirect(new URL(retiredProducts.get(requestedProduct), url.origin).href, 301);
+    }
     // Keep existing bookmarks useful after consolidating the site navigation.
     if (/^\/what-we-do(?:\/|\.html)?$/.test(url.pathname)) {
       return Response.redirect(new URL('/about', url.origin).href, 301);
