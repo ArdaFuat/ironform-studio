@@ -28,3 +28,8 @@ EXACT English text: "IRONFORM STUDIO"; category "FLOOR SCULPTURES"; headline two
 ## Turkish Instagram cover
 
 Use the approved English cover as target. Change only FLOOR SCULPTURES to ZEMİN HEYKELLERİ, Raging / Bull to Kızgın / Boğa, Five finishes. One form. to Beş yüzey. Tek form. Preserve all other text, 01 / 08, typography, layout, sculpture, room and material swatches.
+
+
+## Gold horns revision
+
+User requested a sixth finish: retain the approved matte black body and change ONLY both horns to bright polished mirror gold chrome from base to tip. No gold on ears, face, legs, tail or torso. Edit original studio-v2 asset only. Both covers use this finish; page count 01 / 09; footer Six finishes. One form. / Altı yüzey. Tek form. Include six material swatches. Turkish cover is text-only localization of the revised English cover. Built-in imagegen.

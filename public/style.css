@@ -710,3 +710,5 @@ a:focus-visible,button:focus-visible{outline:2px solid #8cbcff;outline-offset:4p
 
 .finish-chip.finish-black-gold{background:linear-gradient(135deg,#181818 48%,#cda752 50%,#ffe6a0 70%,#846521)}
 .piece-videos{display:grid;gap:16px}.piece-videos video{display:block;width:100%;max-height:440px;background:#111;border-radius:4px}
+
+.finish-samples-six{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:18px}

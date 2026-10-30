@@ -348,6 +348,7 @@
 
 
   Object.assign(translations.tr, {
+    "Matte black & mirror gold": "Mat siyah ve ayna altın",
     "Raging Bull": "Kızgın Boğa",
     "A geometric metal bull with a powerful stance, angular horns and a raised tail.": "Güçlü duruşu, köşeli boynuzları ve yukarı kalkık kuyruğuyla geometrik metal boğa heykeli.",
     "Metal Ice Cream": "Metal Dondurma",
@@ -459,6 +460,7 @@
   });
 
   Object.assign(translations.es, {
+    "Matte black & mirror gold": "Negro mate y oro espejo",
     "Raging Bull": "Toro bravo",
     "A geometric metal bull with a powerful stance, angular horns and a raised tail.": "Un toro de metal geométrico con una postura poderosa, cuernos angulares y la cola levantada.",
     "Metal Ice Cream": "Helado de metal",

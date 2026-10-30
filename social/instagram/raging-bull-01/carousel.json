@@ -18,43 +18,49 @@
     },
     {
       "number": 2,
-      "file": "02-matte-black.jpg",
-      "source": "public/assets/products/raging-bull/studio-v2.webp",
+      "file": "02-matte-black-mirror-gold.jpg",
+      "source": "public/assets/products/raging-bull/finishes/matte-gold-v1.webp",
       "type": "Existing website AI asset; JPG export only"
     },
     {
       "number": 3,
-      "file": "03-chrome.jpg",
-      "source": "public/assets/products/raging-bull/finishes/chrome-v2.webp",
+      "file": "03-matte-black.jpg",
+      "source": "public/assets/products/raging-bull/studio-v2.webp",
       "type": "Existing website AI asset; JPG export only"
     },
     {
       "number": 4,
-      "file": "04-gold.jpg",
-      "source": "public/assets/products/raging-bull/finishes/gold-v2.webp",
+      "file": "04-chrome.jpg",
+      "source": "public/assets/products/raging-bull/finishes/chrome-v2.webp",
       "type": "Existing website AI asset; JPG export only"
     },
     {
       "number": 5,
-      "file": "05-black-mirror-chrome.jpg",
-      "source": "public/assets/products/raging-bull/finishes/black-v2.webp",
+      "file": "05-gold.jpg",
+      "source": "public/assets/products/raging-bull/finishes/gold-v2.webp",
       "type": "Existing website AI asset; JPG export only"
     },
     {
       "number": 6,
-      "file": "06-rose-gold.jpg",
-      "source": "public/assets/products/raging-bull/finishes/rose-v2.webp",
+      "file": "06-black-mirror-chrome.jpg",
+      "source": "public/assets/products/raging-bull/finishes/black-v2.webp",
       "type": "Existing website AI asset; JPG export only"
     },
     {
       "number": 7,
-      "file": "07-alternate-angle.jpg",
-      "source": "public/assets/products/raging-bull/angle-v2.webp",
+      "file": "07-rose-gold.jpg",
+      "source": "public/assets/products/raging-bull/finishes/rose-v2.webp",
       "type": "Existing website AI asset; JPG export only"
     },
     {
       "number": 8,
-      "file": "08-real-product.jpg",
+      "file": "08-alternate-angle.jpg",
+      "source": "public/assets/products/raging-bull/angle-v2.webp",
+      "type": "Existing website AI asset; JPG export only"
+    },
+    {
+      "number": 9,
+      "file": "09-real-product.jpg",
       "source": "public/assets/products/raging-bull/original-1.webp",
       "type": "Actual product photograph; proportionally resized with side padding"
     }
