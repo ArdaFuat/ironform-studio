@@ -348,6 +348,21 @@
 
 
   Object.assign(translations.tr, {
+    "Flamingo": "Flamingo",
+    "A riveted geometric metal flamingo with an angular curved neck, a raised leg and a round base.": "Köşeli kıvrımlı boynu, kalkık bacağı ve yuvarlak tabanıyla perçinli geometrik metal flamingo.",
+    "Body and beak combinations": "Gövde ve gaga kombinasyonları",
+    "Single-color finishes": "Tek renk yüzeyler",
+    "Pink / black chrome beak": "Pembe / siyah krom gaga",
+    "Mirror rose gold / black chrome beak": "Ayna rose gold / siyah krom gaga",
+    "Mirror gold / black chrome beak": "Ayna altın / siyah krom gaga",
+    "Mirror rose gold / chrome beak": "Ayna rose gold / açık krom gaga",
+    "Mirror gold / chrome beak": "Ayna altın / açık krom gaga",
+    "All gold": "Tamamı altın",
+    "All rose gold": "Tamamı rose gold",
+    "All chrome": "Tamamı krom",
+    "All black chrome": "Tamamı siyah krom",
+    "All white": "Tamamı beyaz",
+    "All pink": "Tamamı pembe",
     "Matte black & mirror gold": "Mat siyah ve ayna altın",
     "Raging Bull": "Kızgın Boğa",
     "A geometric metal bull with a powerful stance, angular horns and a raised tail.": "Güçlü duruşu, köşeli boynuzları ve yukarı kalkık kuyruğuyla geometrik metal boğa heykeli.",
@@ -460,6 +475,21 @@
   });
 
   Object.assign(translations.es, {
+    "Flamingo": "Flamenco",
+    "A riveted geometric metal flamingo with an angular curved neck, a raised leg and a round base.": "Un flamenco geométrico de metal remachado con cuello curvo angular, una pata levantada y una base redonda.",
+    "Body and beak combinations": "Combinaciones de cuerpo y pico",
+    "Single-color finishes": "Acabados de un solo color",
+    "Pink / black chrome beak": "Rosa / pico cromado negro",
+    "Mirror rose gold / black chrome beak": "Oro rosa / pico cromado negro",
+    "Mirror gold / black chrome beak": "Oro / pico cromado negro",
+    "Mirror rose gold / chrome beak": "Oro rosa / pico cromado plateado",
+    "Mirror gold / chrome beak": "Oro / pico cromado plateado",
+    "All gold": "Todo dorado",
+    "All rose gold": "Todo oro rosa",
+    "All chrome": "Todo cromado",
+    "All black chrome": "Todo cromado negro",
+    "All white": "Todo blanco",
+    "All pink": "Todo rosa",
     "Matte black & mirror gold": "Negro mate y oro espejo",
     "Raging Bull": "Toro bravo",
     "A geometric metal bull with a powerful stance, angular horns and a raised tail.": "Un toro de metal geométrico con una postura poderosa, cuernos angulares y la cola levantada.",

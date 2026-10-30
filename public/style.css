@@ -712,3 +712,6 @@ a:focus-visible,button:focus-visible{outline:2px solid #8cbcff;outline-offset:4p
 .piece-videos{display:grid;gap:16px}.piece-videos video{display:block;width:100%;max-height:440px;background:#111;border-radius:4px}
 
 .finish-samples-six{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:18px}
+
+.flamingo-finishes h3{font-size:12px;font-weight:500;color:var(--muted);margin:24px 0 16px}.flamingo-finishes .finish-label{line-height:1.45}.finish-chip.flamingo-pink{background:linear-gradient(135deg,#f4b9cb,#cf7f9f)}.finish-chip.flamingo-white{background:linear-gradient(135deg,#fff,#ddd);border:1px solid #d7d7d7}.finish-chip.flamingo-pink-black{background:linear-gradient(135deg,#e7a4bc 60%,#15191c 62%,#78818a)}.finish-chip.flamingo-rose-black{background:linear-gradient(135deg,#dfb09b 30%,#f4d5c4 58%,#11181d 62%,#78818a)}.finish-chip.flamingo-gold-black{background:linear-gradient(135deg,#a67c26,#f6dfa3 58%,#11181d 62%,#78818a)}.finish-chip.flamingo-rose-chrome{background:linear-gradient(135deg,#b67b65,#f0c6b2 58%,#d7dce0 62%,#fff 80%,#818b94)}.finish-chip.flamingo-gold-chrome{background:linear-gradient(135deg,#a67c26,#f6dfa3 58%,#d7dce0 62%,#fff 80%,#818b94)}
+.flamingo-page .piece-info{position:static}
