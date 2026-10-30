@@ -1,0 +1,59 @@
+{
+  "concept": "Studio Form v1",
+  "aspectRatio": "4:5",
+  "exportPixels": [
+    1080,
+    1350
+  ],
+  "languages": {
+    "tr": "@ironform_studiotr",
+    "en": "@ironform_studio"
+  },
+  "coverOnlyEdited": true,
+  "slides": [
+    {
+      "number": 1,
+      "type": "localized editorial cover",
+      "masters": {
+        "en": "exec-fc7e119f-435d-4516-98dc-25343968ec8a.png",
+        "tr": "exec-e8407d20-b5cd-4375-9d9e-288e60c6f567.png"
+      }
+    },
+    {
+      "number": 2,
+      "file": "02-matte-black.jpg",
+      "source": "public/assets/products/floor-panther/studio-v1.webp",
+      "type": "existing AI image, visually unchanged; JPG export only"
+    },
+    {
+      "number": 3,
+      "file": "03-chrome.jpg",
+      "source": "public/assets/products/floor-panther/finishes/chrome-v1.webp",
+      "type": "existing AI image, visually unchanged; JPG export only"
+    },
+    {
+      "number": 4,
+      "file": "04-gold.jpg",
+      "source": "public/assets/products/floor-panther/finishes/gold-v1.webp",
+      "type": "existing AI image, visually unchanged; JPG export only"
+    },
+    {
+      "number": 5,
+      "file": "05-black-mirror-chrome.jpg",
+      "source": "public/assets/products/floor-panther/finishes/black-v1.webp",
+      "type": "existing AI image, visually unchanged; JPG export only"
+    },
+    {
+      "number": 6,
+      "file": "06-rose-gold.jpg",
+      "source": "public/assets/products/floor-panther/finishes/rose-v1.webp",
+      "type": "existing AI image, visually unchanged; JPG export only"
+    },
+    {
+      "number": 7,
+      "file": "07-alternate-angle.jpg",
+      "source": "public/assets/products/floor-panther/angle-v1.webp",
+      "type": "existing AI image, visually unchanged; JPG export only"
+    }
+  ]
+}

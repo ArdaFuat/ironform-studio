@@ -1,0 +1,62 @@
+{
+  "concept": "Studio Form v1",
+  "product": "Raging Bull / Kızgın Boğa",
+  "dimensions": [
+    1080,
+    1350
+  ],
+  "approvedProductMaster": "masters/approved-product.png",
+  "approval": "User approved exec-fe564067-8751-4a81-9043-2789650a341d.png; all final visualizations derive from it. Earlier mirrored model versions rejected and retired.",
+  "accounts": {
+    "tr": "@ironform_studiotr",
+    "en": "@ironform_studio (USA)"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "type": "localized editorial cover"
+    },
+    {
+      "number": 2,
+      "file": "02-matte-black.jpg",
+      "source": "public/assets/products/raging-bull/studio-v2.webp",
+      "type": "Existing website AI asset; JPG export only"
+    },
+    {
+      "number": 3,
+      "file": "03-chrome.jpg",
+      "source": "public/assets/products/raging-bull/finishes/chrome-v2.webp",
+      "type": "Existing website AI asset; JPG export only"
+    },
+    {
+      "number": 4,
+      "file": "04-gold.jpg",
+      "source": "public/assets/products/raging-bull/finishes/gold-v2.webp",
+      "type": "Existing website AI asset; JPG export only"
+    },
+    {
+      "number": 5,
+      "file": "05-black-mirror-chrome.jpg",
+      "source": "public/assets/products/raging-bull/finishes/black-v2.webp",
+      "type": "Existing website AI asset; JPG export only"
+    },
+    {
+      "number": 6,
+      "file": "06-rose-gold.jpg",
+      "source": "public/assets/products/raging-bull/finishes/rose-v2.webp",
+      "type": "Existing website AI asset; JPG export only"
+    },
+    {
+      "number": 7,
+      "file": "07-alternate-angle.jpg",
+      "source": "public/assets/products/raging-bull/angle-v2.webp",
+      "type": "Existing website AI asset; JPG export only"
+    },
+    {
+      "number": 8,
+      "file": "08-real-product.jpg",
+      "source": "public/assets/products/raging-bull/original-1.webp",
+      "type": "Actual product photograph; proportionally resized with side padding"
+    }
+  ]
+}
